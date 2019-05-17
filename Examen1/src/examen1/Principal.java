@@ -127,6 +127,11 @@ public class Principal extends javax.swing.JFrame {
         tf_Modificacion_Codigo_Admin = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
+        jd_Prestamos_Libros = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_Prestados = new javax.swing.JTable();
+        bt_Volver_Usuario = new javax.swing.JButton();
+        bt_Limpiar1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         bt_Login_Admin = new javax.swing.JButton();
@@ -932,6 +937,78 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jt_Prestados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Titulo", "Autor", "Genero", "Editoriales", "Idioma", "Año de Escritura", "ISBN", "Año de Adicion", "Estado ", "Persona Prestado", "Cuenta Prestada"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jt_Prestados);
+        if (jt_Prestados.getColumnModel().getColumnCount() > 0) {
+            jt_Prestados.getColumnModel().getColumn(0).setHeaderValue("Titulo");
+            jt_Prestados.getColumnModel().getColumn(1).setHeaderValue("Autor");
+            jt_Prestados.getColumnModel().getColumn(2).setHeaderValue("Genero");
+            jt_Prestados.getColumnModel().getColumn(3).setHeaderValue("Editoriales");
+            jt_Prestados.getColumnModel().getColumn(4).setHeaderValue("Idioma");
+            jt_Prestados.getColumnModel().getColumn(5).setHeaderValue("Año de Escritura");
+            jt_Prestados.getColumnModel().getColumn(6).setHeaderValue("ISBN");
+            jt_Prestados.getColumnModel().getColumn(7).setHeaderValue("Año de Adicion");
+            jt_Prestados.getColumnModel().getColumn(8).setHeaderValue("Estado ");
+            jt_Prestados.getColumnModel().getColumn(9).setHeaderValue("Persona Prestado");
+            jt_Prestados.getColumnModel().getColumn(10).setHeaderValue("Cuenta Prestada");
+        }
+
+        bt_Volver_Usuario.setText("Volver a Usuarior");
+        bt_Volver_Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Volver_UsuarioActionPerformed(evt);
+            }
+        });
+
+        bt_Limpiar1.setText("Limpiar Tabla");
+        bt_Limpiar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Limpiar1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_Prestamos_LibrosLayout = new javax.swing.GroupLayout(jd_Prestamos_Libros.getContentPane());
+        jd_Prestamos_Libros.getContentPane().setLayout(jd_Prestamos_LibrosLayout);
+        jd_Prestamos_LibrosLayout.setHorizontalGroup(
+            jd_Prestamos_LibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Prestamos_LibrosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Prestamos_LibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1460, Short.MAX_VALUE)
+                    .addGroup(jd_Prestamos_LibrosLayout.createSequentialGroup()
+                        .addComponent(bt_Volver_Usuario)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_Limpiar1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jd_Prestamos_LibrosLayout.setVerticalGroup(
+            jd_Prestamos_LibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Prestamos_LibrosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addGroup(jd_Prestamos_LibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Volver_Usuario)
+                    .addComponent(bt_Limpiar1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Libreria Online");
 
@@ -1295,6 +1372,37 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_Libros_PrestadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Libros_PrestadosActionPerformed
         // TODO add your handling code here:
+        int aux = 0;
+        int pre = 0;
+        String busca = JOptionPane.showInputDialog(jd_Usuario, "Ingrese el ISBM del libro a buscar");
+        for (int i = 0; i < libros.size(); i++) {
+            if (((Libros) libros.get(i)).getISBN().equals(busca) && ((Libros) libros.get(i)).getEstado().equals("Disponible")) {
+                aux = Integer.parseInt(JOptionPane.showInputDialog(jd_Usuario, "1. Agregarlo a sus libros\n2. Para  no agregarlo"));
+                if (aux == 1 && ((Usuarios) usuarios.get(pos2)).getPrestados().size() < 5) {
+                    ((Usuarios) usuarios.get(pos2)).getPrestados().add((Libros) libros.get(i));
+                    Object[] newrow = {((Libros) libros.get(i)).getTitulo(),
+                        ((Libros) libros.get(i)).getAutores(),
+                        ((Libros) libros.get(i)).getGenero(),
+                        ((Libros) libros.get(i)).getEditorial(),
+                        ((Libros) libros.get(i)).getIdioma(),
+                        ((Libros) libros.get(i)).getAnio_excribo(),
+                        ((Libros) libros.get(i)).getISBN(),
+                        ((Libros) libros.get(i)).getAnio_Ingreso(),
+                        ((Libros) libros.get(i)).getEstado(),
+                        ((Libros) libros.get(i)).getNombre_prestado(),
+                        ((Libros) libros.get(i)).getCuenta_prestada()};
+                    pre++;
+                    ((Usuarios) usuarios.get(pos2)).setPrestamos(pre);
+                    modelo1.addRow(newrow);
+                    jt_Prestados.setModel(modelo1);
+                    libros.remove(i);
+                } else {
+                }
+            } else {
+                JOptionPane.showMessageDialog(jd_Usuario, "El ISBN no es Valido o el Libro no esta disponible");
+            }
+        }
+
     }//GEN-LAST:event_bt_Libros_PrestadosActionPerformed
 
     private void bt_Modificar_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Modificar_UsuarioActionPerformed
@@ -1330,6 +1438,37 @@ public class Principal extends javax.swing.JFrame {
         jd_Modificacion_Administrador.setLocationRelativeTo(this);
         jd_Modificacion_Administrador.setVisible(true);
     }//GEN-LAST:event_bt_Modificar_AdministradorActionPerformed
+
+    private void bt_Volver_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Volver_UsuarioActionPerformed
+        // TODO add your handling code here:
+        jd_Prestamos_Libros.dispose();
+    }//GEN-LAST:event_bt_Volver_UsuarioActionPerformed
+
+    private void bt_Limpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Limpiar1ActionPerformed
+        // TODO add your handling code here:
+        jt_Inventario.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Titulo", "Autor", "Genero", "Editoriales", "Idioma", "Año de Escritura", "ISBN", "Año de Adicion", "Estado ", "Persona Prestado", "Cuenta Prestada"
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jt_Inventario);
+
+        bt_Volver_Administar1.setText("Volver a Administrar");
+        bt_Volver_Administar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Volver_Administar1ActionPerformed(evt);
+            }
+        });
+    }//GEN-LAST:event_bt_Limpiar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1378,6 +1517,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Inventario;
     private javax.swing.JButton bt_Libros_Prestados;
     private javax.swing.JButton bt_Limpiar;
+    private javax.swing.JButton bt_Limpiar1;
     private javax.swing.JButton bt_Login_Admin;
     private javax.swing.JButton bt_Login_Admin1;
     private javax.swing.JButton bt_Login_Usuario;
@@ -1392,6 +1532,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Volver_Login_Admin;
     private javax.swing.JButton bt_Volver_Login_Usuario;
     private javax.swing.JButton bt_Volver_Logins;
+    private javax.swing.JButton bt_Volver_Usuario;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1435,6 +1576,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JDialog jd_Admisnistrar;
     private com.toedter.calendar.JDateChooser jd_Año_Escrito;
     private com.toedter.calendar.JDateChooser jd_Año_Ingresado;
@@ -1446,8 +1588,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_Login_Usuario;
     private javax.swing.JDialog jd_Modificacion_Administrador;
     private javax.swing.JDialog jd_Modificacion_Usuario;
+    private javax.swing.JDialog jd_Prestamos_Libros;
     private javax.swing.JDialog jd_Usuario;
     private javax.swing.JTable jt_Inventario;
+    private javax.swing.JTable jt_Prestados;
     private javax.swing.JPasswordField pf_Codigo_Admin;
     private javax.swing.JPasswordField pf_Codigo_Usuario;
     private javax.swing.JRadioButton rb_Disponible;
@@ -1484,4 +1628,5 @@ ArrayList usuarios = new ArrayList();
     ArrayList libros = new ArrayList();
     int pos, pos2;
     DefaultTableModel modelo = (DefaultTableModel) jt_Inventario.getModel();
+    DefaultTableModel modelo1 = (DefaultTableModel) jt_Prestados.getModel();
 }
