@@ -161,6 +161,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         bt_Eliminar_Libro.setText("Eliminar Libro");
+        bt_Eliminar_Libro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Eliminar_LibroActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setText("Administracion de Libros");
@@ -173,6 +178,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton1.setText("Inventario de Libros");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_AdmisnistrarLayout = new javax.swing.GroupLayout(jd_Admisnistrar.getContentPane());
         jd_Admisnistrar.getContentPane().setLayout(jd_AdmisnistrarLayout);
@@ -460,7 +470,21 @@ public class Principal extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jt_Inventario.setMaximumSize(new java.awt.Dimension(2147483647, 0));
         jScrollPane1.setViewportView(jt_Inventario);
+        if (jt_Inventario.getColumnModel().getColumnCount() > 0) {
+            jt_Inventario.getColumnModel().getColumn(0).setHeaderValue("Titulo");
+            jt_Inventario.getColumnModel().getColumn(1).setHeaderValue("Autor");
+            jt_Inventario.getColumnModel().getColumn(2).setHeaderValue("Genero");
+            jt_Inventario.getColumnModel().getColumn(3).setHeaderValue("Editoriales");
+            jt_Inventario.getColumnModel().getColumn(4).setHeaderValue("Idioma");
+            jt_Inventario.getColumnModel().getColumn(5).setHeaderValue("Año de Escritura");
+            jt_Inventario.getColumnModel().getColumn(6).setHeaderValue("ISBN");
+            jt_Inventario.getColumnModel().getColumn(7).setHeaderValue("Año de Adicion");
+            jt_Inventario.getColumnModel().getColumn(8).setHeaderValue("Estado ");
+            jt_Inventario.getColumnModel().getColumn(9).setHeaderValue("Persona Prestado");
+            jt_Inventario.getColumnModel().getColumn(10).setHeaderValue("Cuenta Prestada");
+        }
 
         bt_Volver_Administar1.setText("Volver a Administrar");
         bt_Volver_Administar1.addActionListener(new java.awt.event.ActionListener() {
@@ -483,28 +507,24 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_Volver_Administar1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(bt_Limpiar)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1228, Short.MAX_VALUE)
+                    .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
+                        .addComponent(bt_Volver_Administar1)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_Limpiar)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jd_Libros_InventarioLayout.setVerticalGroup(
             jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(bt_Volver_Administar1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addGroup(jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Volver_Administar1)
+                    .addComponent(bt_Limpiar))
                 .addContainerGap(59, Short.MAX_VALUE))
-            .addGroup(jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(bt_Limpiar)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -758,6 +778,21 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_bt_LimpiarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        jd_Libros_Inventario.setModal(true);
+        jd_Libros_Inventario.pack();
+        jd_Libros_Inventario.setLocationRelativeTo(this);
+        jd_Libros_Inventario.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void bt_Eliminar_LibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Eliminar_LibroActionPerformed
+        // TODO add your handling code here:
+        int pos1 = Integer.parseInt(JOptionPane.showInputDialog(jd_Admisnistrar, "Ingrese el libro que quiere eliminar"));
+        libros.remove(pos1);
+        ((Administrador) admins.get(pos)).getInventario().remove(pos1);
+    }//GEN-LAST:event_bt_Eliminar_LibroActionPerformed
 
     /**
      * @param args the command line arguments
