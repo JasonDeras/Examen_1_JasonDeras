@@ -1482,10 +1482,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_Creacion_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Creacion_UsuarioActionPerformed
         // TODO add your handling code here:
-        jd_Login_Usuario.setModal(true);
-        jd_Login_Usuario.pack();
-        jd_Login_Usuario.setLocationRelativeTo(this);
-        jd_Login_Usuario.setVisible(true);
+        jd_Creacion_Usuario.setModal(true);
+        jd_Creacion_Usuario.pack();
+        jd_Creacion_Usuario.setLocationRelativeTo(this);
+        jd_Creacion_Usuario.setVisible(true);
     }//GEN-LAST:event_bt_Creacion_UsuarioActionPerformed
 
     /**
