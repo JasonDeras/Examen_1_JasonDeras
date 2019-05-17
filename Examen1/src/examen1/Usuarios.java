@@ -4,14 +4,14 @@ import java.util.*;
 
 public class Usuarios {
 
-    private int codigo;
+    private String codigo;
     private String nombre;
     private String apellido;
     private int edad;
     private ArrayList<Libros> prestados = new ArrayList();
     private int prestamos;
 
-    public Usuarios(int codigo, String nombre, String apellido, int edad, int prestamos) {
+    public Usuarios(String codigo, String nombre, String apellido, int edad, int prestamos) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -19,11 +19,11 @@ public class Usuarios {
         this.prestamos = prestamos;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
