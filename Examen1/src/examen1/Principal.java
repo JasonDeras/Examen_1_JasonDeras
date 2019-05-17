@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package examen1;
 
-/**
- *
- * @author jason
- */
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 public class Principal extends javax.swing.JFrame {
 
     /**
@@ -31,9 +26,40 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        bt_Login_Admin1 = new javax.swing.JButton();
+        bt_Creacion_Admin = new javax.swing.JButton();
+        tf_Login_Admin = new javax.swing.JTextField();
+        pf_Codigo_Admin = new javax.swing.JPasswordField();
+        jd_Admisnistrar = new javax.swing.JDialog();
+        bt_Crear_Libro = new javax.swing.JButton();
+        bt_Eliminar_Libro = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jd_Creacion_Libro = new javax.swing.JDialog();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jd_Año_Ingresado = new com.toedter.calendar.JDateChooser();
+        jd_Año_Escrito = new com.toedter.calendar.JDateChooser();
+        tf_Autor_Principal = new javax.swing.JTextField();
+        tf_Titulo = new javax.swing.JTextField();
+        tf_Auto_Secunadrio = new javax.swing.JTextField();
+        tf_Idioma = new javax.swing.JTextField();
+        tf_Editorial = new javax.swing.JTextField();
+        tf_ISBN = new javax.swing.JTextField();
+        tf_Genero = new javax.swing.JTextField();
+        rb_Disponible = new javax.swing.JRadioButton();
+        rb_Fuera_de_Inventario = new javax.swing.JRadioButton();
+        rb_Prestado = new javax.swing.JRadioButton();
+        bt_Crear_Libro1 = new javax.swing.JButton();
+        bg_Estados_Libros = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         bt_Login_Admin = new javax.swing.JButton();
@@ -42,15 +68,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setText("Login Administrador");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("Nombre");
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("Codigo");
 
-        jButton1.setText("jButton1");
+        bt_Login_Admin1.setText("Login");
 
-        jButton2.setText("jButton2");
-
-        jTextField1.setText("jTextField1");
+        bt_Creacion_Admin.setText("Crear un admin");
 
         javax.swing.GroupLayout jd_Login_AdminLayout = new javax.swing.GroupLayout(jd_Login_Admin.getContentPane());
         jd_Login_Admin.getContentPane().setLayout(jd_Login_AdminLayout);
@@ -63,17 +87,19 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(jd_Login_AdminLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jd_Login_AdminLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5))
-                    .addGroup(jd_Login_AdminLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)
-                        .addGap(48, 48, 48)
-                        .addComponent(jButton2)))
+                        .addGroup(jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Login_AdminLayout.createSequentialGroup()
+                                .addComponent(bt_Login_Admin1)
+                                .addGap(48, 48, 48)
+                                .addComponent(bt_Creacion_Admin))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Login_AdminLayout.createSequentialGroup()
+                                .addGroup(jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
+                                .addGroup(jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tf_Login_Admin)
+                                    .addComponent(pf_Codigo_Admin))))))
                 .addContainerGap(120, Short.MAX_VALUE))
         );
         jd_Login_AdminLayout.setVerticalGroup(
@@ -84,14 +110,211 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                    .addComponent(tf_Login_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
                 .addGroup(jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jLabel5)
+                    .addComponent(pf_Codigo_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGroup(jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Login_Admin1)
+                    .addComponent(bt_Creacion_Admin))
                 .addGap(56, 56, 56))
+        );
+
+        bt_Crear_Libro.setText("Crear Libro");
+        bt_Crear_Libro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Crear_LibroActionPerformed(evt);
+            }
+        });
+
+        bt_Eliminar_Libro.setText("Eliminar Libro");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel6.setText("Administracion de Libros");
+
+        javax.swing.GroupLayout jd_AdmisnistrarLayout = new javax.swing.GroupLayout(jd_Admisnistrar.getContentPane());
+        jd_Admisnistrar.getContentPane().setLayout(jd_AdmisnistrarLayout);
+        jd_AdmisnistrarLayout.setHorizontalGroup(
+            jd_AdmisnistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_AdmisnistrarLayout.createSequentialGroup()
+                .addGroup(jd_AdmisnistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_AdmisnistrarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jd_AdmisnistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_Eliminar_Libro)
+                            .addComponent(bt_Crear_Libro)))
+                    .addGroup(jd_AdmisnistrarLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel6)))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        jd_AdmisnistrarLayout.setVerticalGroup(
+            jd_AdmisnistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_AdmisnistrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(50, 50, 50)
+                .addComponent(bt_Crear_Libro)
+                .addGap(53, 53, 53)
+                .addComponent(bt_Eliminar_Libro)
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel7.setText("Creacion de Libros");
+
+        jLabel8.setText("Autor Principal");
+
+        jLabel10.setText("Autor Secundario");
+
+        jLabel11.setText("Año de Ingreso a la libreria");
+
+        jLabel12.setText("Año que se escribio");
+
+        jLabel13.setText("Titulo");
+
+        jLabel14.setText("Editorial");
+
+        jLabel15.setText("Idioma");
+
+        jLabel17.setText("ISBN");
+
+        jLabel18.setText("Estado ");
+
+        jLabel19.setText("Genero");
+
+        bg_Estados_Libros.add(rb_Disponible);
+        rb_Disponible.setSelected(true);
+        rb_Disponible.setText("Disponible");
+
+        bg_Estados_Libros.add(rb_Fuera_de_Inventario);
+        rb_Fuera_de_Inventario.setText("Fuera de Inventario");
+
+        bg_Estados_Libros.add(rb_Prestado);
+        rb_Prestado.setText("Prestado");
+
+        bt_Crear_Libro1.setText("Crear");
+        bt_Crear_Libro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Crear_Libro1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_Creacion_LibroLayout = new javax.swing.GroupLayout(jd_Creacion_Libro.getContentPane());
+        jd_Creacion_Libro.getContentPane().setLayout(jd_Creacion_LibroLayout);
+        jd_Creacion_LibroLayout.setHorizontalGroup(
+            jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                        .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_Auto_Secunadrio))
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_Titulo))
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_Genero))
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_Editorial))
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jLabel7))
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_Autor_Principal, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_Idioma)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                        .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Creacion_LibroLayout.createSequentialGroup()
+                                    .addComponent(jLabel17)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tf_ISBN))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Creacion_LibroLayout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jd_Año_Ingresado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Creacion_LibroLayout.createSequentialGroup()
+                                    .addComponent(jLabel12)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jd_Año_Escrito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_Disponible)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rb_Prestado)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_Fuera_de_Inventario))
+                            .addComponent(bt_Crear_Libro1))
+                        .addGap(0, 131, Short.MAX_VALUE))))
+        );
+        jd_Creacion_LibroLayout.setVerticalGroup(
+            jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tf_Autor_Principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(tf_Auto_Secunadrio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(tf_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_Genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(tf_Editorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tf_Idioma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel12)
+                    .addComponent(jd_Año_Escrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addComponent(tf_ISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11)
+                    .addComponent(jd_Año_Ingresado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(rb_Disponible)
+                    .addComponent(rb_Prestado)
+                    .addComponent(rb_Fuera_de_Inventario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(bt_Crear_Libro1)
+                .addGap(26, 26, 26))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,6 +326,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setText("10 libros,1 adminstrador y dos usuarios^C ");
 
         bt_Login_Admin.setText("Login Administrador");
+        bt_Login_Admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Login_AdminActionPerformed(evt);
+            }
+        });
 
         bt_Login_Usuario.setText("Login Usuario");
 
@@ -138,6 +366,106 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_Login_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Login_AdminActionPerformed
+        // TODO add your handling code here:
+        jd_Login_Admin.setModal(true);
+        jd_Login_Admin.pack();
+        jd_Login_Admin.setLocationRelativeTo(this);
+        jd_Login_Admin.setVisible(true);
+    }//GEN-LAST:event_bt_Login_AdminActionPerformed
+
+    private void bt_Crear_LibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_LibroActionPerformed
+        // TODO add your handling code here:
+        jd_Creacion_Libro.setModal(true);
+        jd_Creacion_Libro.pack();
+        jd_Creacion_Libro.setLocationRelativeTo(this);
+        jd_Creacion_Libro.setVisible(true);
+    }//GEN-LAST:event_bt_Crear_LibroActionPerformed
+
+    private void bt_Crear_Libro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_Libro1ActionPerformed
+        // TODO add your handling code here:
+        String estado = "", nombre_prestado = "", cuenta_prestada = "";
+        int numeros = 0, guiones = 0;
+        String titulo = "";
+        String genero = "";
+        String editorial = "";
+        String idioma = "";
+        Date anio_excribo = new Date();
+        String ISBN = "";
+        Date anio_Ingreso = new Date();
+        String autop = "";
+        String autos = "";
+        try {
+            titulo = tf_Titulo.getText();
+            genero = tf_Genero.getText();
+            editorial = tf_Editorial.getText();
+            idioma = tf_Idioma.getText();
+            anio_excribo = jd_Año_Escrito.getDate();
+            String c = tf_ISBN.getText();
+            String[] t = c.split("-");
+            String aux1 = t[0];
+            String aux2 = t[1];
+            String aux3 = t[2];
+            for (int i = 0; i < aux1.length(); i++) {
+                if (Character.isDigit(aux1.charAt(i))) {
+                    numeros++;
+                }
+            }
+            if (numeros == 4) {
+                numeros = 0;
+                guiones++;
+            }
+            for (int i = 0; i < aux2.length(); i++) {
+                if (Character.isDigit(aux1.charAt(i))) {
+                    numeros++;
+                }
+            }
+            if (numeros == 4) {
+                numeros = 0;
+                guiones++;
+            }
+            for (int i = 0; i < aux3.length(); i++) {
+                if (Character.isDigit(aux1.charAt(i))) {
+                    numeros++;
+                }
+            }
+            if (numeros == 4) {
+                numeros = 0;
+                guiones++;
+            }
+            if (guiones == 3) {
+                ISBN = tf_ISBN.getText();
+            }
+            anio_Ingreso = jd_Año_Ingresado.getDate();
+            if (rb_Disponible.isSelected()) {
+                estado = "Disponible";
+                nombre_prestado = "------";
+                cuenta_prestada = "0000";
+            } else if (rb_Prestado.isSelected()) {
+                estado = "Prestado";
+                nombre_prestado = JOptionPane.showInputDialog(jd_Creacion_Libro, "Ingrese nombre de la persona a quien se le presto el libro");
+                cuenta_prestada = JOptionPane.showInputDialog(jd_Creacion_Libro, "Ingrese cunata de la persona que se presto");
+            } else if (rb_Fuera_de_Inventario.isSelected()) {
+                estado = "Fuera de Inventario";
+                nombre_prestado = "";
+                cuenta_prestada = "";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(jd_Creacion_Libro, "Ocurio un error y no se pudo crear un libro");
+        }
+        ((Administrador) admins.get(pos)).getInventario().add(new Libros(titulo, genero, editorial, idioma, anio_excribo, ISBN, anio_Ingreso, estado, nombre_prestado, cuenta_prestada));
+        if (tf_Autor_Principal.getText().equals("")) {
+            autop = JOptionPane.showInputDialog(jd_Creacion_Libro, "Ingrese un el nombre del auto principal");
+            ((Administrador) admins.get(pos)).getInventario().get(pos).getAutores().add(autop);
+        } else {
+            autop = tf_Autor_Principal.getText();
+            ((Administrador) admins.get(pos)).getInventario().get(pos).getAutores().add(autop);
+        }
+        autos = tf_Auto_Secunadrio.getText();
+        ((Administrador) admins.get(pos)).getInventario().get(pos).getAutores().add(autos);
+    }//GEN-LAST:event_bt_Crear_Libro1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,16 +503,51 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup bg_Estados_Libros;
+    private javax.swing.JButton bt_Creacion_Admin;
+    private javax.swing.JButton bt_Crear_Libro;
+    private javax.swing.JButton bt_Crear_Libro1;
+    private javax.swing.JButton bt_Eliminar_Libro;
     private javax.swing.JButton bt_Login_Admin;
+    private javax.swing.JButton bt_Login_Admin1;
     private javax.swing.JButton bt_Login_Usuario;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JDialog jd_Admisnistrar;
+    private com.toedter.calendar.JDateChooser jd_Año_Escrito;
+    private com.toedter.calendar.JDateChooser jd_Año_Ingresado;
+    private javax.swing.JDialog jd_Creacion_Libro;
     private javax.swing.JDialog jd_Login_Admin;
+    private javax.swing.JPasswordField pf_Codigo_Admin;
+    private javax.swing.JRadioButton rb_Disponible;
+    private javax.swing.JRadioButton rb_Fuera_de_Inventario;
+    private javax.swing.JRadioButton rb_Prestado;
+    private javax.swing.JTextField tf_Auto_Secunadrio;
+    private javax.swing.JTextField tf_Autor_Principal;
+    private javax.swing.JTextField tf_Editorial;
+    private javax.swing.JTextField tf_Genero;
+    private javax.swing.JTextField tf_ISBN;
+    private javax.swing.JTextField tf_Idioma;
+    private javax.swing.JTextField tf_Login_Admin;
+    private javax.swing.JTextField tf_Titulo;
     // End of variables declaration//GEN-END:variables
+ArrayList usuarios = new ArrayList();
+    ArrayList admins = new ArrayList();
+    ArrayList libros = new ArrayList();
+    int pos;
 }

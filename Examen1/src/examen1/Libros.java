@@ -77,8 +77,6 @@ public class Libros {
         this.anio_excribo = anio_excribo;
     }
 
-  
-
     public String getISBN() {
         return ISBN;
     }

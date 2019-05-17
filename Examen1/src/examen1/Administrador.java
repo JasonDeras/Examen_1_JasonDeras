@@ -1,11 +1,14 @@
 package examen1;
 
+import java.util.ArrayList;
+
 public class Administrador {
 
     private int codigo;
     private String nombre;
     private String apellido;
     private int edad;
+    private ArrayList<Libros> inventario = new ArrayList();
 
     public Administrador(int codigo, String nombre, String apellido, int edad) {
         this.codigo = codigo;
@@ -46,9 +49,17 @@ public class Administrador {
         this.edad = edad;
     }
 
+    public ArrayList<Libros> getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(ArrayList<Libros> inventario) {
+        this.inventario = inventario;
+    }
+
     @Override
     public String toString() {
         return "Administrador{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + '}';
     }
-    
+
 }
