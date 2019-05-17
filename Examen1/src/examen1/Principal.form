@@ -87,6 +87,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Login_Admin1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bt_Creacion_Admin">
           <Properties>

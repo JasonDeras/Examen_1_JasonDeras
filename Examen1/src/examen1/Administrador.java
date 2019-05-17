@@ -4,24 +4,24 @@ import java.util.ArrayList;
 
 public class Administrador {
 
-    private int codigo;
+    private String codigo;
     private String nombre;
     private String apellido;
     private int edad;
     private ArrayList<Libros> inventario = new ArrayList();
 
-    public Administrador(int codigo, String nombre, String apellido, int edad) {
+    public Administrador(String codigo, String nombre, String apellido, int edad) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 

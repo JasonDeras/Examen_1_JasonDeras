@@ -73,6 +73,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel5.setText("Codigo");
 
         bt_Login_Admin1.setText("Login");
+        bt_Login_Admin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Login_Admin1ActionPerformed(evt);
+            }
+        });
 
         bt_Creacion_Admin.setText("Crear un admin");
 
@@ -456,6 +461,12 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jd_Creacion_Libro, "Ocurio un error y no se pudo crear un libro");
         }
         ((Administrador) admins.get(pos)).getInventario().add(new Libros(titulo, genero, editorial, idioma, anio_excribo, ISBN, anio_Ingreso, estado, nombre_prestado, cuenta_prestada));
+        libros.add(new Libros(titulo, genero, editorial, idioma, anio_excribo, ISBN, anio_Ingreso, estado, nombre_prestado, cuenta_prestada));
+        for (int i = 0; i < libros.size(); i++) {
+            if (((Libros) libros.get(i)).getISBN().equals(((Administrador) admins.get(i)).getInventario().get(i).getISBN())) {
+                JOptionPane.showMessageDialog(jd_Creacion_Libro, "Ya hay un libro con ese ISBN");
+            }
+        }
         if (tf_Autor_Principal.getText().equals("")) {
             autop = JOptionPane.showInputDialog(jd_Creacion_Libro, "Ingrese un el nombre del auto principal");
             ((Administrador) admins.get(pos)).getInventario().get(pos).getAutores().add(autop);
@@ -465,7 +476,32 @@ public class Principal extends javax.swing.JFrame {
         }
         autos = tf_Auto_Secunadrio.getText();
         ((Administrador) admins.get(pos)).getInventario().get(pos).getAutores().add(autos);
+        tf_Auto_Secunadrio.setText("");
+        tf_Autor_Principal.setText("");
+        tf_Editorial.setText("");
+        tf_Genero.setText("");
+        tf_ISBN.setText("");
+        tf_Idioma.setText("");
+        jd_Año_Escrito.setDate(new Date());
+        jd_Año_Ingresado.setDate(new Date());
     }//GEN-LAST:event_bt_Crear_Libro1ActionPerformed
+
+    private void bt_Login_Admin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Login_Admin1ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < admins.size(); i++) {
+            if (((Administrador) admins.get(pos)).getCodigo().equals(pf_Codigo_Admin.getText()) && ((Administrador) admins.get(i)).getNombre().equals(tf_Login_Admin.getText())) {
+                jd_Admisnistrar.setModal(true);
+                jd_Admisnistrar.pack();
+                jd_Admisnistrar.setLocationRelativeTo(this);
+                jd_Admisnistrar.setVisible(true);
+                jd_Login_Admin.dispose();
+                tf_Login_Admin.setText("");
+                pf_Codigo_Admin.setText("");
+            } else {
+                JOptionPane.showMessageDialog(jd_Login_Admin, "Ese administrador no existe");
+            }
+        }
+    }//GEN-LAST:event_bt_Login_Admin1ActionPerformed
 
     /**
      * @param args the command line arguments
