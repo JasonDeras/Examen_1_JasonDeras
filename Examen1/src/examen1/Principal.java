@@ -76,6 +76,22 @@ public class Principal extends javax.swing.JFrame {
         jt_Inventario = new javax.swing.JTable();
         bt_Volver_Administar1 = new javax.swing.JButton();
         bt_Limpiar = new javax.swing.JButton();
+        jd_Usuario = new javax.swing.JDialog();
+        bt_Libros_Prestados = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jd_Creacion_Admin = new javax.swing.JDialog();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        bt_Crear_Admin = new javax.swing.JButton();
+        tf_Creacion_Codigo_Admin = new javax.swing.JTextField();
+        tf_Creacion_Primer_Nombre_Admin = new javax.swing.JTextField();
+        tf_Creacion_Edad_Admin = new javax.swing.JTextField();
+        tf_Creacion_Primer_Apellido_Admin = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         bt_Login_Admin = new javax.swing.JButton();
@@ -96,6 +112,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         bt_Creacion_Admin.setText("Crear un admin");
+        bt_Creacion_Admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Creacion_AdminActionPerformed(evt);
+            }
+        });
 
         bt_Volver_Logins.setText("Volver a los Logins");
         bt_Volver_Logins.addActionListener(new java.awt.event.ActionListener() {
@@ -527,6 +548,117 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
+        bt_Libros_Prestados.setText("Prestar Libros");
+
+        jButton3.setText("jButton3");
+
+        jButton4.setText("jButton4");
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel21.setText("Bienvenido");
+
+        javax.swing.GroupLayout jd_UsuarioLayout = new javax.swing.GroupLayout(jd_Usuario.getContentPane());
+        jd_Usuario.getContentPane().setLayout(jd_UsuarioLayout);
+        jd_UsuarioLayout.setHorizontalGroup(
+            jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_UsuarioLayout.createSequentialGroup()
+                .addGroup(jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_UsuarioLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(bt_Libros_Prestados)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4))
+                    .addGroup(jd_UsuarioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel21)))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        jd_UsuarioLayout.setVerticalGroup(
+            jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_UsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addGroup(jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Libros_Prestados)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4))
+                .addGap(37, 37, 37))
+        );
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel22.setText("Nuevo Administrador");
+
+        jLabel23.setText("Codigo");
+
+        jLabel24.setText("Edad");
+
+        jLabel25.setText("Primer Nombre");
+
+        jLabel28.setText("Primer Apellido");
+
+        bt_Crear_Admin.setText("Crear");
+        bt_Crear_Admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Crear_AdminActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_Creacion_AdminLayout = new javax.swing.GroupLayout(jd_Creacion_Admin.getContentPane());
+        jd_Creacion_Admin.getContentPane().setLayout(jd_Creacion_AdminLayout);
+        jd_Creacion_AdminLayout.setHorizontalGroup(
+            jd_Creacion_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Creacion_AdminLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jd_Creacion_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(bt_Crear_Admin)
+                    .addGroup(jd_Creacion_AdminLayout.createSequentialGroup()
+                        .addComponent(jLabel25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_Creacion_Primer_Nombre_Admin))
+                    .addGroup(jd_Creacion_AdminLayout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addGap(46, 46, 46)
+                        .addComponent(tf_Creacion_Edad_Admin))
+                    .addGroup(jd_Creacion_AdminLayout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_Creacion_Codigo_Admin))
+                    .addComponent(jLabel22)
+                    .addGroup(jd_Creacion_AdminLayout.createSequentialGroup()
+                        .addComponent(jLabel28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_Creacion_Primer_Apellido_Admin)))
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+        jd_Creacion_AdminLayout.setVerticalGroup(
+            jd_Creacion_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Creacion_AdminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Creacion_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(tf_Creacion_Codigo_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Creacion_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(tf_Creacion_Primer_Nombre_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Creacion_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(tf_Creacion_Primer_Apellido_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jd_Creacion_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(tf_Creacion_Edad_Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(91, 91, 91)
+                .addComponent(bt_Crear_Admin)
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Libreria Online");
 
@@ -660,6 +792,8 @@ public class Principal extends javax.swing.JFrame {
                 estado = "Fuera de Inventario";
                 nombre_prestado = "";
                 cuenta_prestada = "";
+            } else {
+                estado = "";
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -694,8 +828,6 @@ public class Principal extends javax.swing.JFrame {
                     ((Libros) libros.get(i)).getEstado(),
                     ((Libros) libros.get(i)).getNombre_prestado(),
                     ((Libros) libros.get(i)).getCuenta_prestada()};
-
-                DefaultTableModel modelo = (DefaultTableModel) jt_Inventario.getModel();
                 modelo.addRow(newrow);
                 jt_Inventario.setModel(modelo);
             }
@@ -784,6 +916,7 @@ public class Principal extends javax.swing.JFrame {
         jd_Libros_Inventario.setModal(true);
         jd_Libros_Inventario.pack();
         jd_Libros_Inventario.setLocationRelativeTo(this);
+        jt_Inventario.setModel(modelo);
         jd_Libros_Inventario.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -793,6 +926,49 @@ public class Principal extends javax.swing.JFrame {
         libros.remove(pos1);
         ((Administrador) admins.get(pos)).getInventario().remove(pos1);
     }//GEN-LAST:event_bt_Eliminar_LibroActionPerformed
+
+    private void bt_Creacion_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Creacion_AdminActionPerformed
+        // TODO add your handling code here:
+        jd_Creacion_Admin.setModal(true);
+        jd_Creacion_Admin.pack();
+        jd_Creacion_Admin.setLocationRelativeTo(this);
+        jd_Creacion_Admin.setVisible(true);
+    }//GEN-LAST:event_bt_Creacion_AdminActionPerformed
+
+    private void bt_Crear_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_AdminActionPerformed
+        // TODO add your handling code here:
+        String codigo = "";
+        String nombre = "";
+        String apellido = "";
+        int edad = 0;
+        int aux = 0;
+        String aux1 = "";
+        try {
+            aux1 = tf_Creacion_Codigo_Admin.getText();
+            for (int i = 0; i < aux1.length(); i++) {
+                if (Character.isDigit(aux1.charAt(i))) {
+                    aux++;
+                }
+            }
+            if (aux == 4) {
+                codigo = tf_Creacion_Codigo_Admin.getText();
+            } else {
+                JOptionPane.showMessageDialog(jd_Creacion_Admin, "EL codigo que ingreso no es valido");
+            }
+            nombre = tf_Creacion_Primer_Nombre_Admin.getText();
+            apellido = tf_Creacion_Primer_Apellido_Admin.getText();
+            edad = Integer.parseInt(tf_Creacion_Edad_Admin.getText());
+            admins.add(new Administrador(codigo, nombre, apellido, edad));
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(jd_Creacion_Admin, "Ocurio un error u no se creo el administrador");
+        }
+        tf_Creacion_Codigo_Admin.setText("");
+        tf_Creacion_Edad_Admin.setText("");
+        tf_Creacion_Primer_Apellido_Admin.setText("");
+        tf_Creacion_Primer_Nombre_Admin.setText("");
+        jd_Creacion_Admin.dispose();
+    }//GEN-LAST:event_bt_Crear_AdminActionPerformed
 
     /**
      * @param args the command line arguments
@@ -833,9 +1009,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup bg_Estados_Libros;
     private javax.swing.JButton bt_Creacion_Admin;
     private javax.swing.JButton bt_Creacion_Usuario;
+    private javax.swing.JButton bt_Crear_Admin;
     private javax.swing.JButton bt_Crear_Libro;
     private javax.swing.JButton bt_Crear_Libro1;
     private javax.swing.JButton bt_Eliminar_Libro;
+    private javax.swing.JButton bt_Libros_Prestados;
     private javax.swing.JButton bt_Limpiar;
     private javax.swing.JButton bt_Login_Admin;
     private javax.swing.JButton bt_Login_Admin1;
@@ -847,6 +1025,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Volver_Login_Admin;
     private javax.swing.JButton bt_Volver_Logins;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -860,6 +1040,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -871,10 +1057,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_Admisnistrar;
     private com.toedter.calendar.JDateChooser jd_Año_Escrito;
     private com.toedter.calendar.JDateChooser jd_Año_Ingresado;
+    private javax.swing.JDialog jd_Creacion_Admin;
     private javax.swing.JDialog jd_Creacion_Libro;
     private javax.swing.JDialog jd_Libros_Inventario;
     private javax.swing.JDialog jd_Login_Admin;
     private javax.swing.JDialog jd_Login_Usuario;
+    private javax.swing.JDialog jd_Usuario;
     private javax.swing.JTable jt_Inventario;
     private javax.swing.JPasswordField pf_Codigo_Admin;
     private javax.swing.JPasswordField pf_Codigo_Usuario;
@@ -883,6 +1071,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_Prestado;
     private javax.swing.JTextField tf_Auto_Secunadrio;
     private javax.swing.JTextField tf_Autor_Principal;
+    private javax.swing.JTextField tf_Creacion_Codigo_Admin;
+    private javax.swing.JTextField tf_Creacion_Edad_Admin;
+    private javax.swing.JTextField tf_Creacion_Primer_Apellido_Admin;
+    private javax.swing.JTextField tf_Creacion_Primer_Nombre_Admin;
     private javax.swing.JTextField tf_Editorial;
     private javax.swing.JTextField tf_Genero;
     private javax.swing.JTextField tf_ISBN;
@@ -895,4 +1087,5 @@ ArrayList usuarios = new ArrayList();
     ArrayList admins = new ArrayList();
     ArrayList libros = new ArrayList();
     int pos;
+    DefaultTableModel modelo = (DefaultTableModel) jt_Inventario.getModel();
 }
