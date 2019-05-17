@@ -78,9 +78,10 @@ public class Principal extends javax.swing.JFrame {
         bt_Limpiar = new javax.swing.JButton();
         jd_Usuario = new javax.swing.JDialog();
         bt_Libros_Prestados = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        bt_Modificar_Datos = new javax.swing.JButton();
+        bt_Volver_Login_Usuario = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jd_Creacion_Admin = new javax.swing.JDialog();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -103,6 +104,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         tf_Creacion_Edad_Usuario = new javax.swing.JTextField();
         bt_Crear_Usuario = new javax.swing.JButton();
+        jd_Modificacion_Datos = new javax.swing.JDialog();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        tf_Modificacion_Codigo_Usuario = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        tf_Modificacion_Primer_Nombre_Usuario = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        tf_Modificacion_Primer_Apellido_Usuario = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        tf_Modificacion_Edad_Usuario = new javax.swing.JTextField();
+        bt_Modificar_Usuario = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         bt_Login_Admin = new javax.swing.JButton();
@@ -565,42 +577,50 @@ public class Principal extends javax.swing.JFrame {
         );
 
         bt_Libros_Prestados.setText("Prestar Libros");
+        bt_Libros_Prestados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Libros_PrestadosActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        bt_Modificar_Datos.setText("Modificar Datos");
 
-        jButton4.setText("jButton4");
+        bt_Volver_Login_Usuario.setText("Volver al Login");
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel21.setText("Bienvenido");
+
+        jButton2.setText("Listar Libros");
 
         javax.swing.GroupLayout jd_UsuarioLayout = new javax.swing.GroupLayout(jd_Usuario.getContentPane());
         jd_Usuario.getContentPane().setLayout(jd_UsuarioLayout);
         jd_UsuarioLayout.setHorizontalGroup(
             jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_UsuarioLayout.createSequentialGroup()
-                .addGroup(jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_UsuarioLayout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(bt_Libros_Prestados)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4))
-                    .addGroup(jd_UsuarioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel21)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel21)
+                    .addGroup(jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton2)
+                        .addComponent(bt_Libros_Prestados)))
+                .addGap(42, 42, 42)
+                .addComponent(bt_Modificar_Datos)
+                .addGap(18, 18, 18)
+                .addComponent(bt_Volver_Login_Usuario)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jd_UsuarioLayout.setVerticalGroup(
             jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_UsuarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(46, 46, 46)
                 .addGroup(jd_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_Libros_Prestados)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(bt_Modificar_Datos)
+                    .addComponent(bt_Volver_Login_Usuario))
                 .addGap(37, 37, 37))
         );
 
@@ -743,6 +763,77 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(tf_Creacion_Edad_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(91, 91, 91)
                 .addComponent(bt_Crear_Usuario)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel32.setText("Modificacion de datos del Usuario");
+
+        jLabel33.setText("Codigo");
+
+        jLabel34.setText("Primer Nombre");
+
+        jLabel35.setText("Primer Apellido");
+
+        jLabel36.setText("Edad");
+
+        bt_Modificar_Usuario.setText("Modificar");
+        bt_Modificar_Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Modificar_UsuarioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_Modificacion_DatosLayout = new javax.swing.GroupLayout(jd_Modificacion_Datos.getContentPane());
+        jd_Modificacion_Datos.getContentPane().setLayout(jd_Modificacion_DatosLayout);
+        jd_Modificacion_DatosLayout.setHorizontalGroup(
+            jd_Modificacion_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Modificacion_DatosLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jd_Modificacion_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(bt_Modificar_Usuario)
+                    .addGroup(jd_Modificacion_DatosLayout.createSequentialGroup()
+                        .addComponent(jLabel34)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_Modificacion_Primer_Nombre_Usuario))
+                    .addGroup(jd_Modificacion_DatosLayout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addGap(46, 46, 46)
+                        .addComponent(tf_Modificacion_Edad_Usuario))
+                    .addGroup(jd_Modificacion_DatosLayout.createSequentialGroup()
+                        .addComponent(jLabel33)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_Modificacion_Codigo_Usuario))
+                    .addComponent(jLabel32)
+                    .addGroup(jd_Modificacion_DatosLayout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_Modificacion_Primer_Apellido_Usuario)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_Modificacion_DatosLayout.setVerticalGroup(
+            jd_Modificacion_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Modificacion_DatosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Modificacion_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(tf_Modificacion_Codigo_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_Modificacion_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(tf_Modificacion_Primer_Nombre_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_Modificacion_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(tf_Modificacion_Primer_Apellido_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(jd_Modificacion_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(tf_Modificacion_Edad_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(91, 91, 91)
+                .addComponent(bt_Modificar_Usuario)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1065,6 +1156,7 @@ public class Principal extends javax.swing.JFrame {
                 jd_Login_Usuario.pack();
                 jd_Login_Usuario.setLocationRelativeTo(this);
                 jd_Login_Usuario.setVisible(true);
+                pos2 = i;
             } else {
                 JOptionPane.showMessageDialog(jd_Usuario, "El usuario que ingreseo no existe");
             }
@@ -1073,7 +1165,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_Crear_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Crear_UsuarioActionPerformed
         // TODO add your handling code here:
-         String codigo = "";
+        String codigo = "";
         String nombre = "";
         String apellido = "";
         int edad = 0;
@@ -1094,7 +1186,7 @@ public class Principal extends javax.swing.JFrame {
             nombre = tf_Creacion_Primer_Nombre_Usuario.getText();
             apellido = tf_Creacion_Primer_Apellido_Usuario.getText();
             edad = Integer.parseInt(tf_Creacion_Edad_Usuario.getText());
-            usuarios.add(new Usuarios(codigo, nombre, apellido, edad,0));
+            usuarios.add(new Usuarios(codigo, nombre, apellido, edad, 0));
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(jd_Creacion_Usuario, "Ocurio un error u no se creo el administrador");
@@ -1105,6 +1197,23 @@ public class Principal extends javax.swing.JFrame {
         tf_Creacion_Primer_Nombre_Usuario.setText("");
         jd_Creacion_Usuario.dispose();
     }//GEN-LAST:event_bt_Crear_UsuarioActionPerformed
+
+    private void bt_Libros_PrestadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Libros_PrestadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_Libros_PrestadosActionPerformed
+
+    private void bt_Modificar_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Modificar_UsuarioActionPerformed
+        // TODO add your handling code here:
+        ((Usuarios) usuarios.get(pos2)).setApellido(tf_Modificacion_Primer_Nombre_Usuario.getText());
+        ((Usuarios) usuarios.get(pos2)).setCodigo(tf_Modificacion_Codigo_Usuario.getText());
+        ((Usuarios) usuarios.get(pos2)).setNombre(tf_Modificacion_Codigo_Usuario.getText());
+        ((Usuarios) usuarios.get(pos2)).setEdad(Integer.parseInt(tf_Modificacion_Edad_Usuario.getText()));
+        tf_Modificacion_Primer_Nombre_Usuario.setText("");
+        tf_Modificacion_Codigo_Usuario.setText("");
+        tf_Modificacion_Codigo_Usuario.setText("");
+        tf_Modificacion_Edad_Usuario.setText("");
+        jd_Modificacion_Datos.dispose();
+    }//GEN-LAST:event_bt_Modificar_UsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1156,14 +1265,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton bt_Login_Admin1;
     private javax.swing.JButton bt_Login_Usuario;
     private javax.swing.JButton bt_Login_Usuario1;
+    private javax.swing.JButton bt_Modificar_Datos;
+    private javax.swing.JButton bt_Modificar_Usuario;
     private javax.swing.JButton bt_Volver_Administar1;
     private javax.swing.JButton bt_Volver_Administrar;
     private javax.swing.JButton bt_Volver_Login1;
     private javax.swing.JButton bt_Volver_Login_Admin;
+    private javax.swing.JButton bt_Volver_Login_Usuario;
     private javax.swing.JButton bt_Volver_Logins;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1189,6 +1300,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1205,6 +1321,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog jd_Libros_Inventario;
     private javax.swing.JDialog jd_Login_Admin;
     private javax.swing.JDialog jd_Login_Usuario;
+    private javax.swing.JDialog jd_Modificacion_Datos;
     private javax.swing.JDialog jd_Usuario;
     private javax.swing.JTable jt_Inventario;
     private javax.swing.JPasswordField pf_Codigo_Admin;
@@ -1228,11 +1345,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_Idioma;
     private javax.swing.JTextField tf_Login_Admin;
     private javax.swing.JTextField tf_Login_Usuario;
+    private javax.swing.JTextField tf_Modificacion_Codigo_Usuario;
+    private javax.swing.JTextField tf_Modificacion_Edad_Usuario;
+    private javax.swing.JTextField tf_Modificacion_Primer_Apellido_Usuario;
+    private javax.swing.JTextField tf_Modificacion_Primer_Nombre_Usuario;
     private javax.swing.JTextField tf_Titulo;
     // End of variables declaration//GEN-END:variables
 ArrayList usuarios = new ArrayList();
     ArrayList admins = new ArrayList();
     ArrayList libros = new ArrayList();
-    int pos;
+    int pos, pos2;
     DefaultTableModel modelo = (DefaultTableModel) jt_Inventario.getModel();
 }
