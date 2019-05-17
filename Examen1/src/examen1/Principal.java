@@ -1152,11 +1152,6 @@ public class Principal extends javax.swing.JFrame {
         }
         ((Administrador) admins.get(pos)).getInventario().add(new Libros(titulo, genero, editorial, idioma, anio_excribo, ISBN, anio_Ingreso, estado, nombre_prestado, cuenta_prestada));
         libros.add(new Libros(titulo, genero, editorial, idioma, anio_excribo, ISBN, anio_Ingreso, estado, nombre_prestado, cuenta_prestada));
-        for (int i = 0; i < libros.size(); i++) {
-            if (((Libros) libros.get(i)).getISBN().equals(((Administrador) admins.get(i)).getInventario().get(i).getISBN())) {
-                JOptionPane.showMessageDialog(jd_Creacion_Libro, "Ya hay un libro con ese ISBN");
-            }
-        }
         if (tf_Autor_Principal.getText().equals("")) {
             autop = JOptionPane.showInputDialog(jd_Creacion_Libro, "Ingrese un el nombre del auto principal");
             ((Administrador) admins.get(pos)).getInventario().get(pos).getAutores().add(autop);
@@ -1197,7 +1192,7 @@ public class Principal extends javax.swing.JFrame {
     private void bt_Login_Admin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Login_Admin1ActionPerformed
         // TODO add your handling code here:
         for (int i = 0; i < admins.size(); i++) {
-            if (((Administrador) admins.get(pos)).getCodigo().equals(pf_Codigo_Admin.getText()) && ((Administrador) admins.get(i)).getNombre().equals(tf_Login_Admin.getText())) {
+            if (((Administrador) admins.get(i)).getCodigo().equals(pf_Codigo_Admin.getText()) && ((Administrador) admins.get(i)).getNombre().equals(tf_Login_Admin.getText())) {
                 pos = i;
                 jd_Admisnistrar.setModal(true);
                 jd_Admisnistrar.pack();
@@ -1409,10 +1404,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_Modificar_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Modificar_UsuarioActionPerformed
         // TODO add your handling code here:
-        ((Usuarios) admins.get(pos)).setApellido(tf_Modificacion_Primer_Nombre_Admin.getText());
-        ((Usuarios) admins.get(pos)).setCodigo(tf_Modificacion_Codigo_Admin.getText());
-        ((Usuarios) admins.get(pos)).setNombre(tf_Modificacion_Codigo_Admin.getText());
-        ((Usuarios) admins.get(pos)).setEdad(Integer.parseInt(tf_Modificacion_Edad_Admin.getText()));
+        ((Usuarios) admins.get(pos2)).setApellido(tf_Modificacion_Primer_Nombre_Usuario.getText());
+        ((Usuarios) admins.get(pos2)).setCodigo(tf_Modificacion_Codigo_Usuario.getText());
+        ((Usuarios) admins.get(pos2)).setNombre(tf_Modificacion_Codigo_Usuario.getText());
+        ((Usuarios) admins.get(pos2)).setEdad(Integer.parseInt(tf_Modificacion_Edad_Usuario.getText()));
         tf_Modificacion_Primer_Nombre_Usuario.setText("");
         tf_Modificacion_Codigo_Usuario.setText("");
         tf_Modificacion_Codigo_Usuario.setText("");
@@ -1422,14 +1417,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_Modificar_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Modificar_AdminActionPerformed
         // TODO add your handling code here:
-        ((Administrador) usuarios.get(pos2)).setApellido(tf_Modificacion_Primer_Nombre_Usuario.getText());
-        ((Administrador) usuarios.get(pos2)).setCodigo(tf_Modificacion_Codigo_Usuario.getText());
-        ((Administrador) usuarios.get(pos2)).setNombre(tf_Modificacion_Codigo_Usuario.getText());
-        ((Administrador) usuarios.get(pos2)).setEdad(Integer.parseInt(tf_Modificacion_Edad_Usuario.getText()));
-        tf_Modificacion_Primer_Nombre_Usuario.setText("");
-        tf_Modificacion_Codigo_Usuario.setText("");
-        tf_Modificacion_Codigo_Usuario.setText("");
-        tf_Modificacion_Edad_Usuario.setText("");
+        ((Administrador) usuarios.get(pos)).setApellido(tf_Modificacion_Primer_Nombre_Admin.getText());
+        ((Administrador) usuarios.get(pos)).setCodigo(tf_Modificacion_Codigo_Admin.getText());
+        ((Administrador) usuarios.get(pos)).setNombre(tf_Modificacion_Codigo_Admin.getText());
+        ((Administrador) usuarios.get(pos)).setEdad(Integer.parseInt(tf_Modificacion_Edad_Admin.getText()));
+        tf_Modificacion_Primer_Nombre_Admin.setText("");
+        tf_Modificacion_Codigo_Admin.setText("");
+        tf_Modificacion_Codigo_Admin.setText("");
+        tf_Modificacion_Edad_Admin.setText("");
         jd_Modificacion_Administrador.dispose();
     }//GEN-LAST:event_bt_Modificar_AdminActionPerformed
 
