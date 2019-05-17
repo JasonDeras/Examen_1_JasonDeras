@@ -3,12 +3,10 @@ package examen1;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
     public Principal() {
         initComponents();
     }
@@ -30,10 +28,13 @@ public class Principal extends javax.swing.JFrame {
         bt_Creacion_Admin = new javax.swing.JButton();
         tf_Login_Admin = new javax.swing.JTextField();
         pf_Codigo_Admin = new javax.swing.JPasswordField();
+        bt_Volver_Logins = new javax.swing.JButton();
         jd_Admisnistrar = new javax.swing.JDialog();
         bt_Crear_Libro = new javax.swing.JButton();
         bt_Eliminar_Libro = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        bt_Volver_Login_Admin = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jd_Creacion_Libro = new javax.swing.JDialog();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -59,7 +60,22 @@ public class Principal extends javax.swing.JFrame {
         rb_Fuera_de_Inventario = new javax.swing.JRadioButton();
         rb_Prestado = new javax.swing.JRadioButton();
         bt_Crear_Libro1 = new javax.swing.JButton();
+        bt_Volver_Administrar = new javax.swing.JButton();
         bg_Estados_Libros = new javax.swing.ButtonGroup();
+        jd_Login_Usuario = new javax.swing.JDialog();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        bt_Login_Usuario1 = new javax.swing.JButton();
+        bt_Creacion_Usuario = new javax.swing.JButton();
+        bt_Volver_Login1 = new javax.swing.JButton();
+        tf_Login_Usuario = new javax.swing.JTextField();
+        pf_Codigo_Usuario = new javax.swing.JPasswordField();
+        jd_Libros_Inventario = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jt_Inventario = new javax.swing.JTable();
+        bt_Volver_Administar1 = new javax.swing.JButton();
+        bt_Limpiar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         bt_Login_Admin = new javax.swing.JButton();
@@ -80,6 +96,13 @@ public class Principal extends javax.swing.JFrame {
         });
 
         bt_Creacion_Admin.setText("Crear un admin");
+
+        bt_Volver_Logins.setText("Volver a los Logins");
+        bt_Volver_Logins.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Volver_LoginsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_Login_AdminLayout = new javax.swing.GroupLayout(jd_Login_Admin.getContentPane());
         jd_Login_Admin.getContentPane().setLayout(jd_Login_AdminLayout);
@@ -104,8 +127,10 @@ public class Principal extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tf_Login_Admin)
-                                    .addComponent(pf_Codigo_Admin))))))
-                .addContainerGap(120, Short.MAX_VALUE))
+                                    .addComponent(pf_Codigo_Admin))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bt_Volver_Logins)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jd_Login_AdminLayout.setVerticalGroup(
             jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +148,8 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(jd_Login_AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_Login_Admin1)
-                    .addComponent(bt_Creacion_Admin))
+                    .addComponent(bt_Creacion_Admin)
+                    .addComponent(bt_Volver_Logins))
                 .addGap(56, 56, 56))
         );
 
@@ -139,6 +165,15 @@ public class Principal extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setText("Administracion de Libros");
 
+        bt_Volver_Login_Admin.setText("Volver al login");
+        bt_Volver_Login_Admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Volver_Login_AdminActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Inventario de Libros");
+
         javax.swing.GroupLayout jd_AdmisnistrarLayout = new javax.swing.GroupLayout(jd_Admisnistrar.getContentPane());
         jd_Admisnistrar.getContentPane().setLayout(jd_AdmisnistrarLayout);
         jd_AdmisnistrarLayout.setHorizontalGroup(
@@ -152,7 +187,13 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(bt_Crear_Libro)))
                     .addGroup(jd_AdmisnistrarLayout.createSequentialGroup()
                         .addGap(59, 59, 59)
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel6))
+                    .addGroup(jd_AdmisnistrarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(bt_Volver_Login_Admin))
+                    .addGroup(jd_AdmisnistrarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
         jd_AdmisnistrarLayout.setVerticalGroup(
@@ -162,9 +203,13 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(50, 50, 50)
                 .addComponent(bt_Crear_Libro)
-                .addGap(53, 53, 53)
+                .addGap(15, 15, 15)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bt_Eliminar_Libro)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(bt_Volver_Login_Admin)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -204,6 +249,13 @@ public class Principal extends javax.swing.JFrame {
         bt_Crear_Libro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_Crear_Libro1ActionPerformed(evt);
+            }
+        });
+
+        bt_Volver_Administrar.setText("Volver a Administrar");
+        bt_Volver_Administrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Volver_AdministrarActionPerformed(evt);
             }
         });
 
@@ -267,7 +319,10 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(rb_Prestado)
                                 .addGap(18, 18, 18)
                                 .addComponent(rb_Fuera_de_Inventario))
-                            .addComponent(bt_Crear_Libro1))
+                            .addGroup(jd_Creacion_LibroLayout.createSequentialGroup()
+                                .addComponent(bt_Crear_Libro1)
+                                .addGap(71, 71, 71)
+                                .addComponent(bt_Volver_Administrar)))
                         .addGap(0, 131, Short.MAX_VALUE))))
         );
         jd_Creacion_LibroLayout.setVerticalGroup(
@@ -318,8 +373,138 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(rb_Prestado)
                     .addComponent(rb_Fuera_de_Inventario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(bt_Crear_Libro1)
+                .addGroup(jd_Creacion_LibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Crear_Libro1)
+                    .addComponent(bt_Volver_Administrar))
                 .addGap(26, 26, 26))
+        );
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setText("Login de Usuario");
+
+        jLabel16.setText("Nombre");
+
+        jLabel20.setText("Codigo");
+
+        bt_Login_Usuario1.setText("Login");
+
+        bt_Creacion_Usuario.setText("Crear Usuario");
+
+        bt_Volver_Login1.setText("Volver a Logins");
+        bt_Volver_Login1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Volver_Login1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_Login_UsuarioLayout = new javax.swing.GroupLayout(jd_Login_Usuario.getContentPane());
+        jd_Login_Usuario.getContentPane().setLayout(jd_Login_UsuarioLayout);
+        jd_Login_UsuarioLayout.setHorizontalGroup(
+            jd_Login_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Login_UsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Login_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_Login_UsuarioLayout.createSequentialGroup()
+                        .addComponent(bt_Login_Usuario1)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_Creacion_Usuario)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_Volver_Login1))
+                    .addGroup(jd_Login_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Login_UsuarioLayout.createSequentialGroup()
+                            .addComponent(jLabel20)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                            .addComponent(pf_Codigo_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_Login_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jd_Login_UsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addGap(18, 18, 18)
+                                .addComponent(tf_Login_Usuario))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING))))
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+        jd_Login_UsuarioLayout.setVerticalGroup(
+            jd_Login_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Login_UsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addGroup(jd_Login_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tf_Login_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(jd_Login_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(pf_Codigo_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addGroup(jd_Login_UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_Login_Usuario1)
+                    .addComponent(bt_Creacion_Usuario)
+                    .addComponent(bt_Volver_Login1))
+                .addGap(67, 67, 67))
+        );
+
+        jt_Inventario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Titulo", "Autor", "Genero", "Editoriales", "Idioma", "Año de Escritura", "ISBN", "Año de Adicion", "Estado ", "Persona Prestado", "Cuenta Prestada"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jt_Inventario);
+
+        bt_Volver_Administar1.setText("Volver a Administrar");
+        bt_Volver_Administar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Volver_Administar1ActionPerformed(evt);
+            }
+        });
+
+        bt_Limpiar.setText("Limpiar Tabla");
+        bt_Limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_LimpiarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_Libros_InventarioLayout = new javax.swing.GroupLayout(jd_Libros_Inventario.getContentPane());
+        jd_Libros_Inventario.getContentPane().setLayout(jd_Libros_InventarioLayout);
+        jd_Libros_InventarioLayout.setHorizontalGroup(
+            jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_Volver_Administar1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(bt_Limpiar)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jd_Libros_InventarioLayout.setVerticalGroup(
+            jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(bt_Volver_Administar1)
+                .addContainerGap(59, Short.MAX_VALUE))
+            .addGroup(jd_Libros_InventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_Libros_InventarioLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(bt_Limpiar)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -476,6 +661,25 @@ public class Principal extends javax.swing.JFrame {
         }
         autos = tf_Auto_Secunadrio.getText();
         ((Administrador) admins.get(pos)).getInventario().get(pos).getAutores().add(autos);
+        for (int i = 0; i < libros.size(); i++) {
+            if (((Libros) libros.get(i)).getEstado().equals("Disponible") || ((Libros) libros.get(i)).getEstado().equals("Prestado")) {
+                Object[] newrow = {((Libros) libros.get(i)).getTitulo(),
+                    ((Libros) libros.get(i)).getAutores(),
+                    ((Libros) libros.get(i)).getGenero(),
+                    ((Libros) libros.get(i)).getEditorial(),
+                    ((Libros) libros.get(i)).getIdioma(),
+                    ((Libros) libros.get(i)).getAnio_excribo(),
+                    ((Libros) libros.get(i)).getISBN(),
+                    ((Libros) libros.get(i)).getAnio_Ingreso(),
+                    ((Libros) libros.get(i)).getEstado(),
+                    ((Libros) libros.get(i)).getNombre_prestado(),
+                    ((Libros) libros.get(i)).getCuenta_prestada()};
+
+                DefaultTableModel modelo = (DefaultTableModel) jt_Inventario.getModel();
+                modelo.addRow(newrow);
+                jt_Inventario.setModel(modelo);
+            }
+        }
         tf_Auto_Secunadrio.setText("");
         tf_Autor_Principal.setText("");
         tf_Editorial.setText("");
@@ -490,6 +694,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         for (int i = 0; i < admins.size(); i++) {
             if (((Administrador) admins.get(pos)).getCodigo().equals(pf_Codigo_Admin.getText()) && ((Administrador) admins.get(i)).getNombre().equals(tf_Login_Admin.getText())) {
+                pos = i;
                 jd_Admisnistrar.setModal(true);
                 jd_Admisnistrar.pack();
                 jd_Admisnistrar.setLocationRelativeTo(this);
@@ -502,6 +707,57 @@ public class Principal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_bt_Login_Admin1ActionPerformed
+
+    private void bt_Volver_Login_AdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Volver_Login_AdminActionPerformed
+        // TODO add your handling code here:
+        jd_Admisnistrar.dispose();
+    }//GEN-LAST:event_bt_Volver_Login_AdminActionPerformed
+
+    private void bt_Volver_AdministrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Volver_AdministrarActionPerformed
+        // TODO add your handling code here:
+        jd_Creacion_Libro.dispose();
+    }//GEN-LAST:event_bt_Volver_AdministrarActionPerformed
+
+    private void bt_Volver_LoginsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Volver_LoginsActionPerformed
+        // TODO add your handling code here:
+        jd_Login_Admin.dispose();
+    }//GEN-LAST:event_bt_Volver_LoginsActionPerformed
+
+    private void bt_Volver_Login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Volver_Login1ActionPerformed
+        // TODO add your handling code here:
+        jd_Login_Usuario.dispose();
+    }//GEN-LAST:event_bt_Volver_Login1ActionPerformed
+
+    private void bt_Volver_Administar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Volver_Administar1ActionPerformed
+        // TODO add your handling code here:
+        jd_Libros_Inventario.dispose();
+    }//GEN-LAST:event_bt_Volver_Administar1ActionPerformed
+
+    private void bt_LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_LimpiarActionPerformed
+        // TODO add your handling code here:
+        jt_Inventario.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Titulo", "Autor", "Genero", "Editoriales", "Idioma", "Año de Escritura", "ISBN", "Año de Adicion", "Estado ", "Persona Prestado", "Cuenta Prestada"
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jt_Inventario);
+
+        bt_Volver_Administar1.setText("Volver a Administrar");
+        bt_Volver_Administar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Volver_Administar1ActionPerformed(evt);
+            }
+        });
+    }//GEN-LAST:event_bt_LimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -541,12 +797,21 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bg_Estados_Libros;
     private javax.swing.JButton bt_Creacion_Admin;
+    private javax.swing.JButton bt_Creacion_Usuario;
     private javax.swing.JButton bt_Crear_Libro;
     private javax.swing.JButton bt_Crear_Libro1;
     private javax.swing.JButton bt_Eliminar_Libro;
+    private javax.swing.JButton bt_Limpiar;
     private javax.swing.JButton bt_Login_Admin;
     private javax.swing.JButton bt_Login_Admin1;
     private javax.swing.JButton bt_Login_Usuario;
+    private javax.swing.JButton bt_Login_Usuario1;
+    private javax.swing.JButton bt_Volver_Administar1;
+    private javax.swing.JButton bt_Volver_Administrar;
+    private javax.swing.JButton bt_Volver_Login1;
+    private javax.swing.JButton bt_Volver_Login_Admin;
+    private javax.swing.JButton bt_Volver_Logins;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -554,22 +819,30 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JDialog jd_Admisnistrar;
     private com.toedter.calendar.JDateChooser jd_Año_Escrito;
     private com.toedter.calendar.JDateChooser jd_Año_Ingresado;
     private javax.swing.JDialog jd_Creacion_Libro;
+    private javax.swing.JDialog jd_Libros_Inventario;
     private javax.swing.JDialog jd_Login_Admin;
+    private javax.swing.JDialog jd_Login_Usuario;
+    private javax.swing.JTable jt_Inventario;
     private javax.swing.JPasswordField pf_Codigo_Admin;
+    private javax.swing.JPasswordField pf_Codigo_Usuario;
     private javax.swing.JRadioButton rb_Disponible;
     private javax.swing.JRadioButton rb_Fuera_de_Inventario;
     private javax.swing.JRadioButton rb_Prestado;
@@ -580,6 +853,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_ISBN;
     private javax.swing.JTextField tf_Idioma;
     private javax.swing.JTextField tf_Login_Admin;
+    private javax.swing.JTextField tf_Login_Usuario;
     private javax.swing.JTextField tf_Titulo;
     // End of variables declaration//GEN-END:variables
 ArrayList usuarios = new ArrayList();
