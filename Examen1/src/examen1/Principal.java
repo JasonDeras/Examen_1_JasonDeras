@@ -133,7 +133,6 @@ public class Principal extends javax.swing.JFrame {
         bt_Volver_Usuario = new javax.swing.JButton();
         bt_Limpiar1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         bt_Login_Admin = new javax.swing.JButton();
         bt_Login_Usuario = new javax.swing.JButton();
 
@@ -477,6 +476,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         bt_Creacion_Usuario.setText("Crear Usuario");
+        bt_Creacion_Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Creacion_UsuarioActionPerformed(evt);
+            }
+        });
 
         bt_Volver_Login1.setText("Volver a Logins");
         bt_Volver_Login1.addActionListener(new java.awt.event.ActionListener() {
@@ -1015,8 +1019,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Bienvenido al Login");
 
-        jLabel2.setText("10 libros,1 adminstrador y dos usuarios^C ");
-
         bt_Login_Admin.setText("Login Administrador");
         bt_Login_Admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1025,31 +1027,30 @@ public class Principal extends javax.swing.JFrame {
         });
 
         bt_Login_Usuario.setText("Login Usuario");
+        bt_Login_Usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_Login_UsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(69, 69, 69))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(bt_Login_Admin)
                     .addComponent(bt_Login_Usuario))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(38, 38, 38)
+                .addGap(72, 72, 72)
                 .addComponent(bt_Login_Admin)
                 .addGap(53, 53, 53)
                 .addComponent(bt_Login_Usuario)
@@ -1178,6 +1179,7 @@ public class Principal extends javax.swing.JFrame {
                     ((Libros) libros.get(i)).getEstado(),
                     ((Libros) libros.get(i)).getNombre_prestado(),
                     ((Libros) libros.get(i)).getCuenta_prestada()};
+                DefaultTableModel modelo = (DefaultTableModel) jt_Inventario.getModel();
                 modelo.addRow(newrow);
                 jt_Inventario.setModel(modelo);
             }
@@ -1266,7 +1268,6 @@ public class Principal extends javax.swing.JFrame {
         jd_Libros_Inventario.setModal(true);
         jd_Libros_Inventario.pack();
         jd_Libros_Inventario.setLocationRelativeTo(this);
-        jt_Inventario.setModel(modelo);
         jd_Libros_Inventario.setVisible(true);
     }//GEN-LAST:event_bt_InventarioActionPerformed
 
@@ -1393,6 +1394,7 @@ public class Principal extends javax.swing.JFrame {
                         ((Libros) libros.get(i)).getCuenta_prestada()};
                     pre++;
                     ((Usuarios) usuarios.get(pos2)).setPrestamos(pre);
+                    DefaultTableModel modelo1 = (DefaultTableModel) jt_Prestados.getModel();
                     modelo1.addRow(newrow);
                     jt_Prestados.setModel(modelo1);
                     libros.remove(i);
@@ -1470,6 +1472,22 @@ public class Principal extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_bt_Limpiar1ActionPerformed
 
+    private void bt_Login_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Login_UsuarioActionPerformed
+        // TODO add your handling code here:
+        jd_Login_Usuario.setModal(true);
+        jd_Login_Usuario.pack();
+        jd_Login_Usuario.setLocationRelativeTo(this);
+        jd_Login_Usuario.setVisible(true);
+    }//GEN-LAST:event_bt_Login_UsuarioActionPerformed
+
+    private void bt_Creacion_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_Creacion_UsuarioActionPerformed
+        // TODO add your handling code here:
+        jd_Login_Usuario.setModal(true);
+        jd_Login_Usuario.pack();
+        jd_Login_Usuario.setLocationRelativeTo(this);
+        jd_Login_Usuario.setVisible(true);
+    }//GEN-LAST:event_bt_Creacion_UsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1545,7 +1563,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1627,6 +1644,4 @@ ArrayList usuarios = new ArrayList();
     ArrayList admins = new ArrayList();
     ArrayList libros = new ArrayList();
     int pos, pos2;
-    DefaultTableModel modelo = (DefaultTableModel) jt_Inventario.getModel();
-    DefaultTableModel modelo1 = (DefaultTableModel) jt_Prestados.getModel();
 }

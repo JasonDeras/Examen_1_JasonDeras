@@ -590,6 +590,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear Usuario"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Creacion_UsuarioActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="bt_Volver_Login1">
           <Properties>
@@ -1450,11 +1453,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="84" max="32767" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -1462,7 +1460,7 @@
                   <Component id="bt_Login_Admin" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="bt_Login_Usuario" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="155" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -1471,9 +1469,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
               <Component id="bt_Login_Admin" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Component id="bt_Login_Usuario" min="-2" max="-2" attributes="0"/>
@@ -1491,11 +1487,6 @@
         <Property name="text" type="java.lang.String" value="Bienvenido al Login"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="10 libros,1 adminstrador y dos usuarios^C "/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="bt_Login_Admin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Login Administrador"/>
@@ -1508,6 +1499,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Login Usuario"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt_Login_UsuarioActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
